@@ -27,21 +27,27 @@ We also have to keep track of accounting and tax compliance. We did think of Ora
 frontend/
 ├── public/                   # Static assets
 └── src/                      # Source folder
-    ├── app/                  # App Router files & UI composition
+    ├── app/                  # App Router - Pages ONLY
     │   ├── (auth)/           # Route Group: Logical sorting
     │   ├── dashboard/        # Public routes
-    │   │   └── _components/  # Private: Route-specific UI
+    │   │   └── page.tsx/     # 
     │   └── page.tsx          # Homepage
-    ├── shared-components/    # GLOBAL shared UI (e.g., buttons)    
+    ├── features/             # Private: Route-specific UI components + logic
+    │   ├── dashboard/        # Folder containing route specific components, hooks, utils...
+    │   │   └── components/   #
+    │   │   └── hooks/        # 
+    │   │   └── utils/        # 
+    ├── shared-components/    # GLOBAL shared UI (e.g., buttons)  
     │   └── buttons.tsx/      # Feature components
     ├── infrastructure/       # Third-party configurations
     │   └── redux/            # Redux-related components (selectors, slices)
-    │   │   └── homepageSlice # Redux slice with selectors and reducers  
+    │   │   └── homepageSlice # Redux slice with selectors and reducers for state persistence
     │   │   └── homepageThunk # Listens to dispatches and perform API calls
-    │   └── services/         # API fetch code snippets
+    │   └── services/         # API fetch snippets
     ├── models/               # Business object definitions
     │   └── buttons.tsx/      # Business object
     ├── hooks/                # Global custom hooks
+    ├── docs/                 # Documents guiding Agentic AI on tasks (dev, test,...)
     └── utils/                # Global utility functions
 ```
 
